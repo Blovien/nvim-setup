@@ -16,6 +16,7 @@ local builtin = require("telescope.builtin")
 group_key("Telescope", "<leader><leader>", builtin.buffers, "[ ] Find existing buffers")
 
 unique_key("<leader>e", "<cmd>Explore<CR>", "Open Default explorer")
+unique_key("<leader>j", "<cmd>MoltenEvaluateVisual<CR>", "Evaluate current selection")
 ------------------------------------------------------------
 --- SEARCH GROUP -------------------------------------------
 ------------------------------------------------------------
