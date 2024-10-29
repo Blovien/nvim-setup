@@ -1,3 +1,10 @@
+-- Set backgrounds for nvim-cmp
+vim.api.nvim_set_hl(0, "CmpNormal", { bg = "#282828" })
+vim.api.nvim_set_hl(0, "CmpDocNormal", { bg = "#282828" })
+
+-- Set color to copilot completion
+vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6cc644" })
+
 return {
     {
         "ellisonleao/gruvbox.nvim",
