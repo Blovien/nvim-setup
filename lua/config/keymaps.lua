@@ -13,9 +13,15 @@ vim.keymap.set("i", "<C-h>", "<C-W>")
 vim.keymap.set("n", "yil", "0y$", { desc = "Yank in Line" })
 
 local builtin = require("telescope.builtin")
+
 map_group("Telescope", "<leader><leader>", builtin.buffers, "[ ] Find existing buffers")
 
-map("<leader>e", "<cmd>Explore<CR>", "Open Default explorer")
+-- open file_browser with the path of the current buffer
+map(
+    "<leader>e",
+    ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
+    "Open Telescope file browser in current directory"
+)
 
 ------------------------------------------------------------
 --- SEARCH GROUP -------------------------------------------
@@ -84,15 +90,15 @@ map_group("Harpoon", "<leader>h1", function()
     harpoon:list():select(1)
 end, "Select 1")
 
-map_group("Harpoon", "<leader>h1", function()
+map_group("Harpoon", "<leader>h2", function()
     harpoon:list():select(2)
 end, "Select 2")
 
-map_group("Harpoon", "<leader>h1", function()
+map_group("Harpoon", "<leader>h3", function()
     harpoon:list():select(3)
 end, "Select 3")
 
-map_group("Harpoon", "<leader>h1", function()
+map_group("Harpoon", "<leader>h4", function()
     harpoon:list():select(4)
 end, "Select 4")
 
