@@ -9,6 +9,7 @@ if not vim.loop.fs_stat(lazypath) then
         error("Error cloning lazy.nvim:\n" .. out)
     end
 end
+
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 require("lazy").setup({
@@ -29,8 +30,7 @@ require("lazy").setup({
     },
     checker = {
         enabled = true,
-        notify = true,
-        frequency = 3000 * 24 * 7, -- check every week
+        notify = false,
     },
     performance = {
         rtp = {
